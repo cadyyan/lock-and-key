@@ -1,0 +1,16 @@
+[
+{
+  "modid": "lockAndKey",
+  "name": "Lock And Key",
+  "description": "Lock and Keys for Minecraft!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/cadyyan/lock-and-key",
+  "updateUrl": "",
+  "authorList": ["Cadyyan"],
+  "credits": "CopyGirl and BetterStorage for inspiration",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

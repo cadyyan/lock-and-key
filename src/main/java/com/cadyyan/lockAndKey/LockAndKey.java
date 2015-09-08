@@ -22,6 +22,8 @@ public class LockAndKey
 	@SidedProxy(clientSide = "com.cadyyan.lockAndKey.proxy.CommonProxy", serverSide = "com.cadyyan.lockAndKey.proxy.CommonProxy")
 	public static IProxy proxy;
 
+	public static final CreativeTab CREATIVE_TAB = new CreativeTab();
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{

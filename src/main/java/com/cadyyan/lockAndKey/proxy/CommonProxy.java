@@ -11,11 +11,15 @@ public class CommonProxy implements IProxy
 	@Override
 	public void registerItems()
 	{
+		LockAndKey.LOG.trace("Registering items");
+
 		registerItem(LockAndKeyItems.LOCK);
 	}
 
 	protected void registerItem(Item item)
 	{
+		LockAndKey.LOG.trace("Registering item: {}", item.getUnlocalizedName());
+
 		GameRegistry.registerItem(item, item.getUnlocalizedName(), LockAndKey.MODID);
 	}
 }

@@ -14,7 +14,7 @@ public class LockAndKey
 {
 	public static final String MODID   = "lockAndKey";
 	public static final String NAME    = "Lock And Key";
-	public static final String VERSION = "1.0.0"; // TODO: pull this from the build.gradle file
+	public static final String VERSION = "@MOD_VERSION@";
 
 	@Instance(MODID)
 	public static LockAndKey instance;

@@ -1,6 +1,6 @@
 package com.cadyyan.lockAndKey.item;
 
-public class ItemLock extends LockAndKeyBaseItem
+public class ItemLock extends ItemLockBase
 {
 	public ItemLock()
 	{

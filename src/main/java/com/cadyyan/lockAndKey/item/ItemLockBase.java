@@ -1,10 +1,11 @@
 package com.cadyyan.lockAndKey.item;
 
 import com.cadyyan.lockAndKey.LockAndKey;
+import com.cadyyan.lockAndKey.Settings;
 import com.cadyyan.lockAndKey.api.item.ILock;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
@@ -26,10 +27,14 @@ public abstract class ItemLockBase extends LockAndKeyBaseItem implements ILock
 			return false;
 
 		IBlockState blockState = world.getBlockState(blockPos);
+		Block block = blockState.getBlock();
 
-		// TODO: this is bad, don't hardcode blocks
-		if (!blockState.getBlock().equals(Blocks.chest))
+		if (Settings.Locks.whitelistEnabled && !Settings.Locks.blockWhitelist.contains(block))
 			return false;
+		else if (Settings.Locks.blacklistEnabled && Settings.Locks.blockBlacklist.contains(block))
+			return false;
+
+		// TODO: check if we even support this block type
 
 		LockAndKey.LOG.info("===== Lock clicked on block =====");
 

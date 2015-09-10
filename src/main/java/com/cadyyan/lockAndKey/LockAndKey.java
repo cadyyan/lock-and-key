@@ -1,5 +1,6 @@
 package com.cadyyan.lockAndKey;
 
+import com.cadyyan.lockAndKey.handler.ConfigurationHandler;
 import com.cadyyan.lockAndKey.proxy.IProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -34,6 +35,8 @@ public class LockAndKey
 	{
 		LOG.trace("Pre-Initialization Phase");
 
+		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+
 		proxy.registerItems();
 	}
 
@@ -41,6 +44,8 @@ public class LockAndKey
 	public void init(FMLInitializationEvent event)
 	{
 		LOG.trace("Initialization Phase");
+
+		proxy.registerEventHandlers();
 	}
 
 	@EventHandler
